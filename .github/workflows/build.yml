@@ -14,7 +14,7 @@ jobs:
         with:
           dotnet-version: 6.0.402
       - name: Build
-        run: dotnet build
+        run: dotnet build --os win --arch x86 --no-self-contained
       - uses: actions/upload-artifact@v4
         with:
           path: ./bin
