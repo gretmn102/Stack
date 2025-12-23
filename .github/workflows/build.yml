@@ -13,10 +13,8 @@ jobs:
         run: |
           curl -O https://builds.dotnet.microsoft.com/dotnet/Sdk/6.0.428/dotnet-sdk-6.0.428-linux-x64.tar.gz
           mkdir -p $HOME/dotnet && tar zxf dotnet-sdk-6.0.428-linux-x64.tar.gz -C $HOME/dotnet
-          export DOTNET_ROOT=$HOME/dotnet
-          export PATH=$PATH:$HOME/dotnet
       - name: Build
-        run: dotnet build
+        run: $HOME/dotnet/dotnet build
       - uses: actions/upload-artifact@v4
         with:
           path: ./bin
