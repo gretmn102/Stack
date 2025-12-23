@@ -4,10 +4,10 @@
 
 ## Воспроизведение
 
-В [.github\workflows\build.yml](./.github/workflows/build.yml) описаны нюансы сборки библиотеки.
+В [./.github/workflows/build.yml](./.github/workflows/build.yml) описаны нюансы сборки библиотеки.
 
 * Скачать `artifact.zip`
-  * Перейти в **Actions***
+  * Перейти в **Actions**
   * Выбрать последний workflow
   * Выбрать **Summary**
   * Промотать вниз и нажать на **artifact**
@@ -34,4 +34,4 @@
 
 > Program.fsx(3,6): error FS0039: The namespace or module 'StackLibrary' is not defined.
 
-При этом если собрать библиотеку под Win7, то всё отлично работает.
+При этом если собрать библиотеку под Win7, то всё отлично работает. Скомпилированную библиотеку можно найти в [./compiled-win7/](./compiled-win7/).
