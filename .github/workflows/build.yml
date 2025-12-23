@@ -12,7 +12,7 @@ jobs:
       - name: Setup .NET
         uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: 6.x.x
+          dotnet-version: 6.0.402
       - name: Build
         run: dotnet build
       - uses: actions/upload-artifact@v4
