@@ -10,11 +10,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Setup .NET
-        uses: actions/setup-dotnet@v5
-        with:
-          dotnet-version: 6.0.428
+        run: |
+          curl -O https://builds.dotnet.microsoft.com/dotnet/Sdk/6.0.428/dotnet-sdk-6.0.428-linux-x64.tar.gz
+          mkdir -p $HOME/dotnet && tar zxf dotnet-sdk-6.0.428-linux-x64.tar.gz -C $HOME/dotnet
+          export DOTNET_ROOT=$HOME/dotnet
+          export PATH=$PATH:$HOME/dotnet
       - name: Build
-        run: dotnet build --os win --arch x86 --no-self-contained
+        run: dotnet build
       - uses: actions/upload-artifact@v4
         with:
           path: ./bin
